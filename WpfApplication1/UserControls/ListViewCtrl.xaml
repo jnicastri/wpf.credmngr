@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="WpfApplication1.UserControls.ListViewCtrl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="440" Width="505">
+    <DockPanel Margin="10">
+        <Label Content="Search By Key: " DockPanel.Dock="Top"></Label>
+        <TextBox DockPanel.Dock="Top" Margin="0,0,0,10" Name="SearchBx" TextChanged="SearchBx_TextChanged" />
+        
+        <ListView Name="DataViewRes">
+            <ListView.Resources>
+                <ContextMenu x:Key="LvContextMenu">
+                    <MenuItem Header="Copy Password" Command="{Binding Path=DataContext.Copy, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" CommandParameter="{Binding Name}" Click="CopyMenuItem_Click" />
+                    <MenuItem Header="Copy Username" Command="{Binding Path=DataContext.Copy, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" CommandParameter="{Binding Name}" Click="CopyUserNameMenuItem_Click" />
+                    <Separator />
+                    <MenuItem Header="Edit" Command="{Binding Path=DataContext.Edit, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Click="EditMenuItem_Click"  CommandParameter="{Binding Name}" />
+                    <MenuItem Header="Delete" Command="{Binding Path=DataContext.Delete, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Click="DeleteMenuItem_Click" CommandParameter="{Binding Name}" />
+                    <Separator />
+                    <MenuItem Header="Add New" Command="{Binding Path=DataContext.Add, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ListView}}" Click="NewMenuItem_Click" />
+                </ContextMenu>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ContextMenu" Value="{StaticResource LvContextMenu}" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Key (Name)" Width="155"  DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Username" Width="160"  DisplayMemberBinding="{Binding Username}" />
+                    <GridViewColumn Header="Password" Width="160"  DisplayMemberBinding="{Binding Password}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="WpfApplication1.UserControls.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="380" d:DesignWidth="260">
+    <UserControl.Resources>
+        <Style x:Key="BigBtnStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </UserControl.Resources>
+    <Grid Name="LoginGrid" HorizontalAlignment="Center" Visibility="Visible">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+            <ColumnDefinition Width="80" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+        <TextBlock Name="LoginKeyIndicator" Grid.Column="1" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="1" Name="OneBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="1">1</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="1" Grid.Column="1" Name="TwoBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="2">2</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="1" Grid.Column="2" Name="ThreeBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="3">3</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="2" Name="FourBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="4" >4</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="2" Grid.Column="1" Name="FiveBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="5">5</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="2" Grid.Column="2" Name="SixBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="6">6</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="3" Name="SevenBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="7">7</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="3" Grid.Column="1" Name="EightBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="8">8</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="3" Grid.Column="2" Name="NineBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="9">9</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="4" Name="ClearBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="C">Clear</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="4" Grid.Column="1" Name="ZeroBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="0">0</Button>
+        <Button Style="{StaticResource BigBtnStyle}" Grid.Row="4" Grid.Column="2" Name="ExitBtn" Width="80" Height="80" Click="LogInBtn_Click" CommandParameter="X">Exit</Button>
+    </Grid>
+</UserControl>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfApplication1.InputWindows.NewEntryBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add New Entry" SizeToContent="WidthAndHeight" ResizeMode="NoResize" Icon="/CredManagerApp;component/Resources/KeysIcon.ico">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label FontWeight="Bold">Please Fill in the below fields:</Label>
+        <Label Grid.Row="1" Margin="0,5,0,5">Key Value (Name):</Label>
+        <TextBox Grid.Column="1" Grid.Row="1" MinWidth="250" Name="KeyNameTb" FontSize="17" Margin="0,5,0,5" Padding="0" />
+        <Label Grid.Row="2" Margin="0,5,0,5">Username:</Label>
+        <TextBox Name="UsernameTb" Grid.Column="1" Grid.Row="2" FontSize="17" MinWidth="250" Margin="0,5,0,5" />
+        <Label Grid.Row="3" Margin="0,5,0,5">Password:</Label>
+        <TextBox Grid.Column="1" Grid.Row="3" MinWidth="250" FontSize="17" Name="PwdTb" Margin="0,5,0,5" />
+        <WrapPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0" >
+            <Button IsDefault="True" Name="btnAddNewOK" Click="btnAddNewOK_Click" MinWidth="60" Margin="0,0,10,0"></Button>
+            <Button IsCancel="True" MinWidth="60" Click="CancelButton_Click">_Cancel</Button>
+        </WrapPanel>
+    </Grid>
+</Window>
